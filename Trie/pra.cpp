@@ -1,8 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    string w = "b";
-    cout << w[0] - 'a';
+    string word = "ilovesamsung";
+    int i = 0;
+    cout <<word.substr(i,1);
     return 0;
 }
