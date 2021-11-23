@@ -1,19 +1,23 @@
 #include <iostream>
-#include <vector>
-#include <set>
 using namespace std;
+class temp
+{
+    int a = 1;
+};
+class temp2 : public temp
+{
+public:
+    int b = 1;
+    void print()
+    {
+
+        cout << b << endl;
+        cout << super.a << endl;
+    }
+};
 int main()
 {
-    bool temp = true;
-    set<int> s;
-    s.insert(2);
-    s.insert(1);
-    s.insert(6);
-    s.insert(4);
-    set<int>::iterator itr;
-    for (itr = s.begin(); itr != s.end(); itr++)
-    {
-        cout << *itr;
-    }
+    temp2 a;
+
     return 0;
 }
