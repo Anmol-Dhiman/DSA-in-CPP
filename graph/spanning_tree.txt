@@ -1,0 +1,4 @@
+these condition to be satisfied for the spanning tree: - 
+connected, subgraph(just like subset), all the nodes to be present as compare to the universal graph,
+number of edges should be number of (node - 1)
+there should be no cycle in spanning tree

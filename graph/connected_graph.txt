@@ -1,0 +1,4 @@
+the connected graph : - 
+the graph in which we have the path form on node to another node is called connected graph
+or 
+the graph which is in topological space

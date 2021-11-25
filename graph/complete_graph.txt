@@ -1,0 +1,4 @@
+the complete graph: - 
+the cyclic graph is called complete graph
+
+a complete graph have n^(n-2) number of spanning trees.
