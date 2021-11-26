@@ -1,0 +1,24 @@
+the termonology in graph: - 
+
+1. directed graph : - when the edge have the direction of movement.
+2. undirected graph : - when the edge do not have the direction of movement i.e. the we can go from one node to another
+
+degree: - 
+the degree is always calculated for the directed graph
+1. indegree: - the number of edges coming to the node.
+2. outdegree: - the number of edges outgoing to the node.
+
+
+cycle in a graph is is called cyclic graph and it's vice versa is called acyclic graph
+
+
+**tree is a connected acyclic graph
+
+topological sort: - 
+
+only directed acyclic graph have the topological sequence 
+and this sequence is not unique one graph have many topological sequence
+
+first adding the nodes whose indegree is zero and then subtract 1 form the indegree of adjacent node 
+and then do the first step.
+this is the way to write the topological sequence 

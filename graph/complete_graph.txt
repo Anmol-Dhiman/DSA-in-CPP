@@ -1,4 +1,6 @@
 the complete graph: - 
 the cyclic graph is called complete graph
 
+number of edges are (n*(n-1))/2
+
 a complete graph have n^(n-2) number of spanning trees.
