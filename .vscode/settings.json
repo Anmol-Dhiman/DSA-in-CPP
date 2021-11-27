@@ -4,5 +4,6 @@
         "vector": "cpp",
         "queue": "cpp",
         "new": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
