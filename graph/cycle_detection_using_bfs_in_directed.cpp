@@ -1,5 +1,4 @@
-// this is also called the kahn's algorithm
-// we can apply this algo only on DAG(directed acyclic graph)
+// we use the same logic as the topological sort
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -27,15 +26,8 @@ public:
     {
         arr[u].push_back(v);
     }
-    void topological_sort()
+    bool is_cycle_present()
     {
-        //  logic: - 
-
-        // we use the indegree method for finding the topological sort using bfs
-   
-        // first we add the elemts in queue whose indegree is zero     // pop out the front and add it to the topo* sort sequence and then : -
-        // decrements the indegree of the nodes which are connected to them 
-        // and then repeat the steps
 
         vector<int>::iterator j;
         queue<int> q;
@@ -60,12 +52,12 @@ public:
         }
         int node;
         vector<int>::iterator m;
-
+        int count = 0;
         while (!q.empty())
         {
             node = q.front();
             q.pop();
-            cout << node << " ";
+            count++;
             for (m = arr[node].begin(); m != arr[node].end(); m++)
             {
                 indegre[*m]--;
@@ -75,17 +67,20 @@ public:
                 }
             }
         }
+        if (count == n)
+            return false;
+        return true;
     }
 };
 int main()
 {
     graph g(6);
-    g.addEdge(5, 2);
-    g.addEdge(5, 0);
-    g.addEdge(4, 0);
-    g.addEdge(4, 1);
+    g.addEdge(0, 1);
+    g.addEdge(1, 2);
     g.addEdge(2, 3);
-    g.addEdge(3, 1);
-    g.topological_sort();
+    g.addEdge(3, 4);
+    g.addEdge(4, 2);
+ 
+    cout << g.is_cycle_present();
     return 0;
 }
