@@ -1,8 +1,17 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 int main()
 {
-    int v[2];
-    cout << v[0];
+    vector<pair<int, int>> a;
+    a.push_back({1, 2});
+    a.push_back({23, 24});
+    pair<int, int> p;
+    p = a.front();
+    a.pop_back();
+
+    p = a.front();
+    a.pop_back();
+    cout << p.first;
     return 0;
 }

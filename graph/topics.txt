@@ -1,8 +1,12 @@
 these are the topics to be covered in graph
 Topics:
 Introduction, DFS and BFS. 1
-Graph Cycle.
-Topological Sorting.
-Minimum Spanning Tree. 1
+Graph Cycle.   1
+Topological Sorting.   1
+Minimum Spanning Tree.  
 BackTracking.
 Shortest Paths.
+
+left out topics : - 
+
+1. Dijkastra's algorithm
