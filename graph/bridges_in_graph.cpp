@@ -43,6 +43,13 @@ public:
             {
                 dfs(i, node, timer);
                 lowest_input[node] = min(lowest_input[node], lowest_input[i]);
+
+                // main algo: - 
+                // we compare the lowest time with the input time because if the lowest time of the 
+                // connected node is greater then the input time of its parent node this means their 
+                // is no other way to go to that node and this means it is the part of the bridge node
+                // if we have the way to go that node then the lowest time of connected node will be equal to the input time of parent node
+                
                 if (lowest_input[i] > input[node])
                     cout << node << " " << i << endl;
             }

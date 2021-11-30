@@ -1,5 +1,6 @@
 // Articulation point: - by removing of the nodes or points , the graph is divided into the two or more parts
 // is called the ariculation points
+// the same technique is used as compare to the bridge in a grpah just we have to check the low[i]>=in[node]&&parent!=-1
 
 #include <iostream>
 #include <vector>
@@ -44,14 +45,22 @@ public:
             {
                 dfs(i, node, timer);
                 lowest_input[node] = min(lowest_input[node], lowest_input[i]);
-                if (lowest_input[i] > input[node])
-                    cout << node << " " << i << endl;
+
+                // main algo: -
+                // we compare the lowest time with the input time because if the lowest time of the
+                // connected node is greater then the input time of its parent node this means their
+                // is no other way to go to that node and this means it is the part of the bridge node
+                // and for parent !=-1 is only applicable for the first node only
+
+                
+                if (lowest_input[i] >= input[node] && parent != -1)
+                    cout << node << " " << endl;
             }
             else
                 lowest_input[node] = min(lowest_input[node], lowest_input[i]);
         }
     }
-    void bridege_exists()
+    void articulation_points()
     {
         int timer = 0;
         for (int i = 0; i <= n; i++)
@@ -63,6 +72,20 @@ public:
 };
 int main()
 {
+    graph g(7);
+    g.addEdge(1, 2);
+    g.addEdge(1, 4);
+    g.addEdge(2, 1);
+    g.addEdge(2, 3);
+    g.addEdge(3, 2);
+    g.addEdge(3, 4);
+    g.addEdge(4, 1);
+    g.addEdge(4, 3);
+    g.addEdge(5, 4);
+    g.addEdge(4, 5);
+    g.addEdge(5, 6);
+    g.addEdge(6, 5);
 
+    g.articulation_points();
     return 0;
 }
