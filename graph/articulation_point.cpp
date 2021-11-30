@@ -1,4 +1,5 @@
-// bridge in garph means if we remove any edges then the graph will break down into two or more components
+// Articulation point: - by removing of the nodes or points , the graph is divided into the two or more parts
+// is called the ariculation points
 
 #include <iostream>
 #include <vector>
@@ -60,24 +61,8 @@ public:
         }
     }
 };
-
 int main()
 {
-    graph g(7);
-    g.addEdge(1, 2);
-    g.addEdge(1, 4);
-    g.addEdge(2, 1);
-    g.addEdge(2, 3);
-    g.addEdge(3, 2);
-    g.addEdge(3, 4);
-    g.addEdge(4, 1);
-    g.addEdge(4, 3);
-    g.addEdge(5, 4);
-    g.addEdge(4, 5);
-    g.addEdge(5, 6);
-    g.addEdge(6, 5);
-
-    g.bridege_exists();
 
     return 0;
 }

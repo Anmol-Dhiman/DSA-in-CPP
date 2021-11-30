@@ -65,7 +65,6 @@ public:
     }
     void minimum_spanning(){
         int cost=0;
-        sort(arr.begin(),arr.end());
     }
 };
 int main()
