@@ -1,5 +1,4 @@
-// this is also called the kahn's algorithm
-// we can apply this algo only on DAG(directed acyclic graph)
+
 #include <iostream>
 #include <stack>
 #include <vector>
