@@ -1,4 +1,4 @@
-// some of the main points of kosaraju's aglo: - 
+// some of the main points of kosaraju's aglo: -
 
 // this algo helps to find the strongly connected components (SCC) in a graph
 
