@@ -61,6 +61,8 @@ public:
 int main()
 {
     graph g(6);
+
+    // addEdge(u, v, weight)
     g.addEdge(0, 1, 2);
     g.addEdge(0, 4, 1);
     g.addEdge(4, 2, 2);

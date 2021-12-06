@@ -1,4 +1,9 @@
-// this disjoint set is an sanother type of data structrue which will help to find the MST 
+// the defination: -
+// this data structure is used to find if the two nodes are belong to the same component or not
+
+
+
+// this disjoint set is an another type of data structrue which will help to find the MST 
 #include <iostream>
 using namespace std;
 class disjoint_set
