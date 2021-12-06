@@ -13,6 +13,8 @@ int main()
         cin >> start >> end;
         v.push_back({start, end});
     }
+
+    // this is the lambda function: - the function which is used only once and it's defination is diclared in the code only
     sort(v.begin(), v.end(), [&](vector<int> &a, vector<int> &b)
          { return a[1] < b[1]; });
     int count = 1;

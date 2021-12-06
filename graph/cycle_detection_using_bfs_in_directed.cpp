@@ -67,6 +67,7 @@ public:
                 }
             }
         }
+        // if count is equal to the n or the number of noes then their is no cycle in the graph
         if (count == n)
             return false;
         return true;
