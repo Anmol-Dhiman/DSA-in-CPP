@@ -1,4 +1,4 @@
- 
+
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -27,7 +27,14 @@ public:
     {
         arr[u].push_back({v, weight});
     }
-    void shortest_distance_using_bfs(int src, int val)
+    void printing_the_distances()
+    {
+        for (int i = 0; i <=n; i++)
+        {
+            cout << distance[i] << " ";
+        }
+    }
+    void shortest_distance_using_bfs(int src)
     {
         distance[src] = 0;
         queue<int> q;
@@ -55,7 +62,7 @@ public:
                 }
             }
         }
-        cout << distance[val];
+        printing_the_distances();
     }
 };
 int main()
@@ -63,14 +70,14 @@ int main()
     graph g(6);
 
     // addEdge(u, v, weight)
-    g.addEdge(0, 1, 2);
+    g.addEdge(0, 1, -2);
     g.addEdge(0, 4, 1);
-    g.addEdge(4, 2, 2);
+    g.addEdge(4, 2, -2);
     g.addEdge(1, 2, 3);
     g.addEdge(4, 5, 4);
-    g.addEdge(5, 3, 1);
+    g.addEdge(5, 3, -1);
 
     g.addEdge(2, 3, 6);
-    g.shortest_distance_using_bfs(0, 3);
+    g.shortest_distance_using_bfs(0);
     return 0;
 }
