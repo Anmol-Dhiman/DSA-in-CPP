@@ -81,7 +81,7 @@ int main()
     g.addEdge(2, 3);
     g.addEdge(3, 4);
     g.addEdge(4, 2);
- 
+
     cout << g.is_cycle_present();
     return 0;
 }
