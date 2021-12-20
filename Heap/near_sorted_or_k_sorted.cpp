@@ -1,34 +1,36 @@
-// this is the basic implementation of the min heap
-
-// max heap mae top pae maximum milae ga aur min heap mae minimum
-// the time complexity for insertion is log(n)
-
-// **it is not necessary that we will get the sorted element below the top of heap 
-// but when we remove the top element of the heap then the heapify occurs and it will auto matically sort again
+// in this problem we have to sort the array which is nearly sorted or k sorted which means
+// that you will get the value of a particular index form k position right or left form that index
 
 #include <iostream>
 #include <queue>
 using namespace std;
 int main()
 {
-
-    
     priority_queue<int, vector<int>, greater<int>> minHeap;
     int arr[] = {7, 10, 4, 3, 20, 15};
     int k = 3;
+    int index = 0;
     for (int i = 0; i < 6; i++)
     {
         minHeap.push(arr[i]);
         if (minHeap.size() > k)
         {
+            arr[index] = minHeap.top();
             minHeap.pop();
+            index++;
         }
     }
+
     while (!minHeap.empty())
     {
-        cout << minHeap.top() << " ";
+        arr[index] = minHeap.top();
         minHeap.pop();
+        index++;
     }
 
+    for (int i = 0; i < 6; i++)
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }

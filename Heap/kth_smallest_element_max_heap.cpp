@@ -2,6 +2,7 @@
 
 // this is the question where we have to find the kth smallest element in the array
 
+// the time complexity for instertion is log(n)
 
 #include <iostream>
 #include <queue>
