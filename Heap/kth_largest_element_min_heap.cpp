@@ -14,6 +14,7 @@ int main()
 
     
     priority_queue<int, vector<int>, greater<int>> minHeap;
+    
     int arr[] = {7, 10, 4, 3, 20, 15};
     int k = 3;
     for (int i = 0; i < 6; i++)
