@@ -4,6 +4,8 @@
 // or we will assumen that the give array is the binary tree sequence and then
 // we will apply the heapify on that and convert it into the heap
 
+// for converting it into the min heap code : - we have to chagne the condition
+// i.e. we have to find the smallest among the root, left and right
 #include <iostream>
 using namespace std;
 
@@ -13,6 +15,7 @@ void heapify(int arr[], int n, int i)
     int l = 2 * i + 1; // left = 2*i + 1
     int r = 2 * i + 2; // right = 2*i + 2
 
+    // the below two if condition will find the largest among the three i.e. root, left and right
     // If left child is larger than root
     if (l < n && arr[l] > arr[largest])
         largest = l;
@@ -21,6 +24,7 @@ void heapify(int arr[], int n, int i)
     if (r < n && arr[r] > arr[largest])
         largest = r;
 
+    // and here if the largest is not the root then we will swap the root with the largest and continues heapify
     // If largest is not root
     if (largest != i)
     {
