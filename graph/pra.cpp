@@ -1,55 +1,45 @@
+/* A naive recursive implementation that simply
+follows the above optimal substructure property */
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Create an empty set to store the subsequences
-unordered_set<string> sn;
- 
-// Function for generating the subsequences
-void subsequences(char s[], char op[], int i, int j)
+
+// Matrix Ai has dimension p[i-1] x p[i]
+// for i = 1..n
+int MatrixChainOrder(int p[], int i, int j)
 {
- 
-    // Base Case
-    if (s[i] == '\0') {
-        op[j] = '\0';
- 
-        // Insert each generated
-        // subsequence into the set
-        sn.insert(op);
-        return;
+    if (i == j)
+        return 0;
+    int k;
+    int min = INT_MAX;
+    int count;
+
+    // place parenthesis at different places
+    // between first and last matrix, recursively
+    // calculate count of multiplications for
+    // each parenthesis placement and return the
+    // minimum count
+    for (k = i; k < j; k++) 
+    {
+        count = MatrixChainOrder(p, i, k)
+                + MatrixChainOrder(p, k + 1, j)
+                + p[i - 1] * p[k] * p[j];
+
+        if (count < min)
+            min = count;
     }
- 
-    // Recursive Case
-    else {
-        // When a particular character is taken
-        op[j] = s[i];
-        subsequences(s, op, i + 1, j + 1);
- 
-        // When a particular character isn't taken
-        subsequences(s, op, i + 1, j);
-        return;
-    }
+
+    // Return minimum count
+    return min;
 }
- 
+
 // Driver Code
 int main()
 {
-    char str[] = "ggg";
-    int m = sizeof(str) / sizeof(char);
-    int n = pow(2, m) + 1;
- 
-    // Output array for storing
-    // the generating subsequences
-    // in each call
-    char op[m+1]; //extra one for having \0 at the end
- 
-    // Function Call
-    subsequences(str, op, 0, 0);
- 
-    // Output will be the number
-    // of elements in the set
-    cout << sn.size();
-    sn.clear();
-    return 0;
- 
-    // This code is contributed by Kishan Mishra
+    int arr[] = { 3,5,6,8 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Minimum number of multiplications is "
+         << MatrixChainOrder(arr, 1, n - 1);
 }
+
+// This code is contributed by Shivi_Aggarwal

@@ -7,30 +7,31 @@ using namespace std;
 int main()
 {
     priority_queue<int, vector<int>, greater<int>> minHeap;
-    int arr[] = {7, 10, 4, 3, 20, 15};
+    int arr[] = {6, 5, 3, 2, 8, 10, 9};
     int k = 3;
+    vector<int> v;
+
     int index = 0;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 7; i++)
     {
         minHeap.push(arr[i]);
         if (minHeap.size() > k)
         {
-            arr[index] = minHeap.top();
+            v.push_back(minHeap.top());
             minHeap.pop();
-            index++;
         }
     }
 
     while (!minHeap.empty())
     {
-        arr[index] = minHeap.top();
+        v.push_back(minHeap.top());
+
         minHeap.pop();
-        index++;
     }
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 7; i++)
     {
-        cout << arr[i] << " ";
+        cout << v[i] << " ";
     }
     return 0;
 }
