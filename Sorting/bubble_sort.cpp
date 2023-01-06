@@ -1,4 +1,4 @@
-// in bubble sort we compare the adjacent number and if it was illegal then we swap them 
+// in bubble sort we compare the adjacent number and if it was illegal then we swap them
 #include <iostream>
 using namespace std;
 void printing(int a[], int n)

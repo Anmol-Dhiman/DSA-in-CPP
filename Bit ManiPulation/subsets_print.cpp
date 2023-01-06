@@ -3,7 +3,9 @@
 // in this program we will print the value corresponding to the setbit
 
 #include <iostream>
+#include <vector>
 using namespace std;
+
 void subset(int a[], int n)
 {
     for (int i = 0; i < (1 << n); i++)
@@ -20,14 +22,5 @@ void subset(int a[], int n)
 }
 int main()
 {
-    int n;
-    cout << "enter the number of inputs:";
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    subset(a, n);
     return 0;
 }

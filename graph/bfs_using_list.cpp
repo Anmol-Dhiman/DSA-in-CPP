@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -19,6 +21,8 @@ public:
     {
         arr[u].push_back(v);
     }
+    // breadth first search/ level wise traversal
+
     void bfs(int start)
     {
         // the same concept is used as compare to the adjacency matrix

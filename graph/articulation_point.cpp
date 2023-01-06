@@ -52,7 +52,6 @@ public:
                 // is no other way to go to that node and this means it is the part of the bridge node
                 // and for parent !=-1 is only applicable for the first node only
 
-                
                 if (lowest_input[i] >= input[node] && parent != -1)
                     cout << node << " " << endl;
             }

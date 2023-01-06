@@ -1,0 +1,1 @@
+graph can have components that's why we have to use the visited array to traverse every node
